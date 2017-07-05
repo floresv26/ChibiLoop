@@ -1,6 +1,7 @@
 package com.floresvanessa.chibiloop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,9 +15,15 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,6 +73,20 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        // Get the intent that started this activity and extract the string
+        Intent intent = getIntent();
+        String userEmail = intent.getStringExtra(LoginActivity.USER_EMAIL);
+
+        // Capture the layout's TextView and set the string as its text
+        TextView textView = (TextView) findViewById(R.id.message);
+        textView.setText(userEmail);
+
+        // Write a message to the database
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("message");
+
+        databaseReference.setValue("Second Message!");
     }
 
     // Setting up the custom ActionBar
