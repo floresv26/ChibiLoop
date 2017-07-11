@@ -12,7 +12,9 @@ public class Content {
     private String mFileName;
     private String mContentType;
     private String mContentCategory;
-    private String mDateCreated;
+    private String mTimestamp;
+    private String mTitle;
+    private String mLength;
 
     /***** Constructors *****/
 
@@ -31,17 +33,22 @@ public class Content {
      * @param mFileName
      * @param mContentType
      * @param mContentCategory
-     * @param mDateCreated
+     * @param mTimestamp
+     * @param mTitle
+     * @param mLength
      */
     public Content(String mContentId, String mContentTitle, String mUserId, String mFileName,
-                   String mContentType, String mContentCategory, String mDateCreated) {
+                   String mContentType, String mContentCategory, String mTimestamp,
+                   String mTitle, String mLength) {
         this.mContentId = mContentId;
         this.mContentTitle = mContentTitle;
         this.mUserId = mUserId;
         this.mFileName = mFileName;
         this.mContentType = mContentType;
         this.mContentCategory = mContentCategory;
-        this.mDateCreated = mDateCreated;
+        this.mTimestamp = mTimestamp;
+        this.mTitle = mTitle;
+        this.mLength = mLength;
     }
 
     /**
@@ -51,16 +58,21 @@ public class Content {
      * @param mFileName
      * @param mContentType
      * @param mContentCategory
-     * @param mDateCreated
+     * @param mTimestamp
+     * @param mTitle
+     * @param mLength
+     *
      */
     public Content(String mContentTitle, String mUserId, String mFileName, String mContentType,
-                   String mContentCategory, String mDateCreated) {
+                   String mContentCategory, String mTimestamp, String mTitle, String mLength) {
         this.mContentTitle = mContentTitle;
         this.mUserId = mUserId;
         this.mFileName = mFileName;
         this.mContentType = mContentType;
         this.mContentCategory = mContentCategory;
-        this.mDateCreated = mDateCreated;
+        this.mTimestamp = mTimestamp;
+        this.mTitle = mTitle;
+        this.mLength = mLength;
     }
 
     /**
@@ -69,15 +81,19 @@ public class Content {
      * @param mUserId
      * @param mFileName
      * @param mContentType
-     * @param mDateCreated
+     * @param mTimestamp
+     * @param mTitle
+     * @param mLength
      */
     public Content(String mContentTitle, String mUserId, String mFileName,
-                   String mContentType, String mDateCreated) {
+                   String mContentType, String mTimestamp, String mTitle, String mLength) {
         this.mContentTitle = mContentTitle;
         this.mUserId = mUserId;
         this.mFileName = mFileName;
         this.mContentType = mContentType;
-        this.mDateCreated = mDateCreated;
+        this.mTimestamp = mTimestamp;
+        this.mTitle = mTitle;
+        this.mLength = mLength;
     }
 
     /**
@@ -139,12 +155,28 @@ public class Content {
         this.mContentCategory = contentCategory;
     }
 
-    public String getDateCreated() {
-        return mDateCreated;
+    public String getTimestamp() {
+        return mTimestamp;
     }
 
-    public void setDateCreated(String dateCreated) {
-        this.mDateCreated = dateCreated;
+    public void setTimestamp(String timestamp) {
+        this.mTimestamp = timestamp;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String title) {
+        this.mTitle = title;
+    }
+
+    public String getLength() {
+        return mLength;
+    }
+
+    public void setLength(String length) {
+        this.mLength = length;
     }
 
     /***** toString method *****/
@@ -158,7 +190,9 @@ public class Content {
                 ", mFileName='" + mFileName + '\'' +
                 ", mContentType='" + mContentType + '\'' +
                 ", mContentCategory='" + mContentCategory + '\'' +
-                ", mDateCreated='" + mDateCreated + '\'' +
+                ", mTimestamp='" + mTimestamp + '\'' +
+                ", mTitle='" + mTitle + '\'' +
+                ", mLength='" + mLength + '\'' +
                 '}';
     }
 }

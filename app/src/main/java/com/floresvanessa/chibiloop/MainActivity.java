@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Get the intent that started this activity and extract the string
         Intent intent = getIntent();
-        String userEmail = intent.getStringExtra(LoginActivity.USER_EMAIL);
+        String userEmail = intent.getStringExtra(SignUpActivity.USER_EMAIL);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.message);

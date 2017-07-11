@@ -33,5 +33,9 @@
     <string name="create_account">Create Account</string>
     <string name="sign_out">Sign Out</string>
     <string name="verify_email">Verify Email</string>
+    <string name="or_option">or</string>
+    <string name="logo_description">ChibiLoop Logo</string>
+    <string name="no_account_yet">No account yet? Create one</string>
+    <string name="sing_in_with_google">SIGN IN WITH GOOGLE</string>
 
 </resources>
