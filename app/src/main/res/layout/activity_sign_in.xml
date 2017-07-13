@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.floresvanessa.chibiloop.SignInActivity"
+    android:id="@+id/sign_in_scrollview"
+    android:background="@color/colorPrimary">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ImageView with ChibiLoop Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/colorAccent"
+            android:contentDescription="@string/logo_description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/input_container"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBorder"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/email_input_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp">
+
+                <!-- Email icon -->
+                <ImageView
+                    android:id="@+id/email_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_dialog_email"
+                    android:tint="@color/colorAccent"
+                    android:layout_alignBottom="@+id/hold_email_field"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                 <!--Email Field -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/hold_email_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:textColorHint="#FFFFFF">
+                    <EditText
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:hint="@string/hint_email"
+                        android:textSize="16sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/password_input_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp">
+
+                <!-- Password icon -->
+                <ImageView
+                    android:id="@+id/password_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_lock_idle_lock"
+                    android:tint="@color/colorAccent"
+                    android:layout_alignBottom="@+id/hold_password_field"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp" />
+
+                <!--Password Field -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/hold_password_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/password_icon"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:textColorHint="#FFFFFF">
+                    <EditText
+                        android:id="@+id/input_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="@string/hint_password"
+                        android:textSize="16sp"
+                        app:et_helper="Must be at least 8 characters"/>
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+
+            <!-- Sign in button -->
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/colorAccent"
+                android:text="@string/sign_in"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:elevation="2dp"/>
+
+        </LinearLayout>
+
+
+        <!-- Divider -->
+
+
+        <View
+            android:id="@+id/horizontal_divider_left"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightBorder"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="36dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/divider_text"
+            app:layout_constraintTop_toBottomOf="@+id/input_container" />
+
+        <TextView
+            android:id="@+id/divider_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/divider_text"
+            android:textSize="16sp"
+            android:textColor="@color/colorLightBorder"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_container"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:id="@+id/horizontal_divider_right"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightBorder"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="36dp"
+            app:layout_constraintLeft_toRightOf="@+id/divider_text"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_container" />
+
+
+
+        <!-- Facebook and Google Sign in Buttons-->
+
+        <LinearLayout
+            android:id="@+id/extra_sign_in_buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_divider_left"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/facebook_sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/google_sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <!-- Forgot Password and Sign Up -->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/forgot_sign_up_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:layout_marginRight="0dp"-->
+            <!--android:layout_marginTop="48dp"-->
+            <!--android:divider="@color/colorLightBorder"-->
+            <!--android:dividerPadding="2.5dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:showDividers="middle|beginning"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/extra_sign_in_buttons_container">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/forgot_password_button"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/forgot_password"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="14sp"-->
+                <!--android:textColor="@color/colorLightBorder"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_weight="1" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/go_to_sign_up"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/no_account_yet"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@color/colorLightBorder"-->
+                <!--android:textSize="14sp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_weight="1"/>-->
+
+        <!--</LinearLayout>-->
+
+        <View
+            android:id="@+id/forgot_sign_up_divider_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightBorder"
+            app:layout_constraintBottom_toTopOf="@+id/forgot_sign_up_divider_vertical"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/forgot_password_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:textSize="14sp"
+            android:textColor="@color/colorLightBorder"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/forgot_sign_up_divider_vertical"/>
+
+        <View
+            android:id="@+id/forgot_sign_up_divider_vertical"
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="@color/colorLightBorder"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/go_to_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_account_yet"
+            android:textColor="@color/colorLightBorder"
+            android:textSize="14sp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="14sp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/forgot_sign_up_divider_vertical" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
